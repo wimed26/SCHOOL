@@ -1,0 +1,72 @@
+{
+  "name": "CashTransaction",
+  "type": "object",
+  "properties": {
+    "student_id": {
+      "type": "string",
+      "title": "ID Siswa"
+    },
+    "student_name": {
+      "type": "string",
+      "title": "Nama Siswa"
+    },
+    "class_name": {
+      "type": "string",
+      "title": "Kelas"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "masuk",
+        "keluar"
+      ],
+      "default": "masuk",
+      "title": "Jenis"
+    },
+    "amount": {
+      "type": "number",
+      "title": "Jumlah"
+    },
+    "date": {
+      "type": "string",
+      "format": "date",
+      "title": "Tanggal"
+    },
+    "description": {
+      "type": "string",
+      "title": "Keterangan"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "lunas",
+        "belum"
+      ],
+      "default": "lunas",
+      "title": "Status"
+    }
+  },
+  "required": [
+    "type",
+    "amount",
+    "date"
+  ],
+  "rls": {
+    "create": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "read": null,
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

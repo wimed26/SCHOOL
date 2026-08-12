@@ -1,0 +1,64 @@
+{
+  "name": "Student",
+  "type": "object",
+  "properties": {
+    "nis": {
+      "type": "string",
+      "title": "NIS"
+    },
+    "name": {
+      "type": "string",
+      "title": "Nama"
+    },
+    "class_id": {
+      "type": "string",
+      "title": "Kelas"
+    },
+    "class_name": {
+      "type": "string",
+      "title": "Nama Kelas"
+    },
+    "gender": {
+      "type": "string",
+      "enum": [
+        "L",
+        "P"
+      ],
+      "title": "Jenis Kelamin"
+    },
+    "address": {
+      "type": "string",
+      "title": "Alamat"
+    },
+    "phone": {
+      "type": "string",
+      "title": "Nomor HP"
+    },
+    "parent_name": {
+      "type": "string",
+      "title": "Nama Orang Tua"
+    }
+  },
+  "required": [
+    "nis",
+    "name"
+  ],
+  "rls": {
+    "create": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "read": null,
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

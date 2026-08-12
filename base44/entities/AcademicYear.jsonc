@@ -1,0 +1,45 @@
+{
+  "name": "AcademicYear",
+  "type": "object",
+  "properties": {
+    "semester": {
+      "type": "string",
+      "enum": [
+        "Ganjil",
+        "Genap"
+      ],
+      "title": "Semester"
+    },
+    "school_year": {
+      "type": "string",
+      "title": "Tahun Pelajaran"
+    },
+    "is_active": {
+      "type": "boolean",
+      "default": false,
+      "title": "Aktif"
+    }
+  },
+  "required": [
+    "semester",
+    "school_year"
+  ],
+  "rls": {
+    "create": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "read": null,
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

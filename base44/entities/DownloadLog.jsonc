@@ -1,0 +1,58 @@
+{
+  "name": "DownloadLog",
+  "type": "object",
+  "properties": {
+    "user_name": {
+      "type": "string",
+      "title": "Pengguna"
+    },
+    "total_files": {
+      "type": "number",
+      "title": "Total File"
+    },
+    "total_size": {
+      "type": "number",
+      "title": "Total Ukuran (bytes)"
+    },
+    "zip_size": {
+      "type": "number",
+      "title": "Ukuran ZIP (bytes)"
+    },
+    "zip_name": {
+      "type": "string",
+      "title": "Nama ZIP"
+    },
+    "failed_files": {
+      "type": "string",
+      "title": "File Gagal"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "berhasil",
+        "sebagian",
+        "gagal"
+      ],
+      "default": "berhasil",
+      "title": "Status"
+    }
+  },
+  "required": [
+    "zip_name",
+    "total_files"
+  ],
+  "rls": {
+    "create": null,
+    "read": null,
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

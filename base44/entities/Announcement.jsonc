@@ -1,0 +1,52 @@
+{
+  "name": "Announcement",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "title": "Judul"
+    },
+    "content": {
+      "type": "string",
+      "title": "Isi"
+    },
+    "date": {
+      "type": "string",
+      "format": "date",
+      "title": "Tanggal"
+    },
+    "priority": {
+      "type": "string",
+      "enum": [
+        "tinggi",
+        "sedang",
+        "rendah"
+      ],
+      "default": "sedang",
+      "title": "Prioritas"
+    }
+  },
+  "required": [
+    "title",
+    "content",
+    "date"
+  ],
+  "rls": {
+    "create": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "read": null,
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

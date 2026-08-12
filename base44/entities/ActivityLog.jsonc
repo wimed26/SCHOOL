@@ -1,0 +1,41 @@
+{
+  "name": "ActivityLog",
+  "type": "object",
+  "properties": {
+    "user_name": {
+      "type": "string",
+      "title": "Pengguna"
+    },
+    "action": {
+      "type": "string",
+      "title": "Aksi"
+    },
+    "detail": {
+      "type": "string",
+      "title": "Detail"
+    },
+    "date": {
+      "type": "string",
+      "format": "date-time",
+      "title": "Tanggal"
+    }
+  },
+  "required": [
+    "action",
+    "date"
+  ],
+  "rls": {
+    "create": null,
+    "read": null,
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

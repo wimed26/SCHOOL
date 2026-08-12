@@ -1,0 +1,43 @@
+{
+  "name": "Teacher",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "title": "Nama"
+    },
+    "phone": {
+      "type": "string",
+      "title": "Nomor HP"
+    },
+    "email": {
+      "type": "string",
+      "title": "Email"
+    },
+    "subject": {
+      "type": "string",
+      "title": "Mata Pelajaran"
+    }
+  },
+  "required": [
+    "name"
+  ],
+  "rls": {
+    "create": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "read": null,
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

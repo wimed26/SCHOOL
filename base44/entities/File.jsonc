@@ -1,0 +1,89 @@
+{
+  "name": "File",
+  "type": "object",
+  "properties": {
+    "file_name": {
+      "type": "string",
+      "title": "Nama File"
+    },
+    "file_url": {
+      "type": "string",
+      "title": "URL File"
+    },
+    "file_type": {
+      "type": "string",
+      "title": "Jenis File"
+    },
+    "file_size": {
+      "type": "number",
+      "title": "Ukuran File (bytes)"
+    },
+    "task_id": {
+      "type": "string",
+      "title": "ID Tugas"
+    },
+    "task_name": {
+      "type": "string",
+      "title": "Nama Tugas"
+    },
+    "subject_id": {
+      "type": "string",
+      "title": "ID Mata Pelajaran"
+    },
+    "subject_name": {
+      "type": "string",
+      "title": "Mata Pelajaran"
+    },
+    "class_id": {
+      "type": "string",
+      "title": "ID Kelas"
+    },
+    "class_name": {
+      "type": "string",
+      "title": "Kelas"
+    },
+    "student_id": {
+      "type": "string",
+      "title": "ID Siswa"
+    },
+    "student_name": {
+      "type": "string",
+      "title": "Nama Siswa"
+    },
+    "uploaded_by": {
+      "type": "string",
+      "title": "Diunggah Oleh"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "aktif",
+        "arsip"
+      ],
+      "default": "aktif",
+      "title": "Status"
+    }
+  },
+  "required": [
+    "file_name",
+    "file_url"
+  ],
+  "rls": {
+    "create": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "read": null,
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

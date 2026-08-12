@@ -1,0 +1,51 @@
+{
+  "name": "Task",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "title": "Judul Tugas"
+    },
+    "description": {
+      "type": "string",
+      "title": "Deskripsi"
+    },
+    "subject_id": {
+      "type": "string",
+      "title": "ID Mata Pelajaran"
+    },
+    "subject_name": {
+      "type": "string",
+      "title": "Mata Pelajaran"
+    },
+    "class_id": {
+      "type": "string",
+      "title": "ID Kelas"
+    },
+    "class_name": {
+      "type": "string",
+      "title": "Kelas"
+    }
+  },
+  "required": [
+    "title"
+  ],
+  "rls": {
+    "create": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "read": null,
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

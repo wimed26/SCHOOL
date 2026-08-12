@@ -1,0 +1,70 @@
+{
+  "name": "Attendance",
+  "type": "object",
+  "properties": {
+    "student_id": {
+      "type": "string",
+      "title": "ID Siswa"
+    },
+    "student_name": {
+      "type": "string",
+      "title": "Nama Siswa"
+    },
+    "student_nis": {
+      "type": "string",
+      "title": "NIS"
+    },
+    "class_id": {
+      "type": "string",
+      "title": "ID Kelas"
+    },
+    "class_name": {
+      "type": "string",
+      "title": "Kelas"
+    },
+    "date": {
+      "type": "string",
+      "format": "date",
+      "title": "Tanggal"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "hadir",
+        "izin",
+        "sakit",
+        "alpha",
+        "terlambat"
+      ],
+      "default": "hadir",
+      "title": "Status"
+    },
+    "note": {
+      "type": "string",
+      "title": "Keterangan"
+    }
+  },
+  "required": [
+    "student_id",
+    "date",
+    "status"
+  ],
+  "rls": {
+    "create": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "read": null,
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

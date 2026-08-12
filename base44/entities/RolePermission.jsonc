@@ -1,0 +1,35 @@
+{
+  "name": "RolePermission",
+  "type": "object",
+  "properties": {
+    "role": {
+      "type": "string",
+      "title": "Role"
+    },
+    "allowed_routes": {
+      "type": "string",
+      "title": "Allowed Routes (comma-separated)"
+    }
+  },
+  "required": [
+    "role"
+  ],
+  "rls": {
+    "create": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "read": null,
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

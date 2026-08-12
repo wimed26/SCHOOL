@@ -1,0 +1,41 @@
+{
+  "name": "NotificationSetting",
+  "type": "object",
+  "properties": {
+    "attendance_notif": {
+      "type": "boolean",
+      "default": true,
+      "title": "Notifikasi Absensi"
+    },
+    "cash_notif": {
+      "type": "boolean",
+      "default": true,
+      "title": "Notifikasi Kas"
+    },
+    "savings_notif": {
+      "type": "boolean",
+      "default": true,
+      "title": "Notifikasi Tabungan"
+    },
+    "announcement_notif": {
+      "type": "boolean",
+      "default": true,
+      "title": "Notifikasi Pengumuman"
+    }
+  },
+  "required": [],
+  "rls": {
+    "create": {
+      "created_by_id": "{{user.id}}"
+    },
+    "read": {
+      "created_by_id": "{{user.id}}"
+    },
+    "update": {
+      "created_by_id": "{{user.id}}"
+    },
+    "delete": {
+      "created_by_id": "{{user.id}}"
+    }
+  }
+}

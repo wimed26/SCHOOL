@@ -1,0 +1,55 @@
+{
+  "name": "AttendanceSetting",
+  "type": "object",
+  "properties": {
+    "late_threshold": {
+      "type": "string",
+      "title": "Batas Keterlambatan",
+      "default": "07:30"
+    },
+    "start_time": {
+      "type": "string",
+      "title": "Jam Mulai Absensi",
+      "default": "06:00"
+    }
+  },
+  "required": [
+    "late_threshold"
+  ],
+  "rls": {
+    "read": null,
+    "create": {
+      "$or": [
+        {
+          "user_condition": {
+            "role": "admin"
+          }
+        },
+        {
+          "user_condition": {
+            "role": "user"
+          }
+        }
+      ]
+    },
+    "update": {
+      "$or": [
+        {
+          "user_condition": {
+            "role": "admin"
+          }
+        },
+        {
+          "user_condition": {
+            "role": "user"
+          }
+        }
+      ]
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

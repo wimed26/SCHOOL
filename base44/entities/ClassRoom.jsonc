@@ -1,0 +1,39 @@
+{
+  "name": "ClassRoom",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "title": "Nama Kelas"
+    },
+    "homeroom_teacher": {
+      "type": "string",
+      "title": "Wali Kelas"
+    },
+    "academic_year": {
+      "type": "string",
+      "title": "Tahun Ajaran"
+    }
+  },
+  "required": [
+    "name"
+  ],
+  "rls": {
+    "create": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "read": null,
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}
